@@ -5,6 +5,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import NavBar from './components/NavBar';
 import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
     <div className="App">
 <NavBar />
       <header className="App-header">
-    <p>Shop online. Proximamente !! </p>
+<ItemListContainer />
       </header>
     </div>
   );
