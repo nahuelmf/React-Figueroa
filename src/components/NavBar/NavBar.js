@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import CartWidget from './CartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 
 
 
@@ -15,7 +15,7 @@ function NavBar() {
     return (
 <Navbar bg="light" expand="lg">
   <Container>
-    <Navbar.Brand href="#home"><img src='./Assets/img/LogoPrueba.png'/></Navbar.Brand>
+    <Navbar.Brand href="#home"><img src='./Assets/img/Pichuninuni.jpeg'/></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
