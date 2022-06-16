@@ -19,7 +19,7 @@ setCount (click + 1);
 return (
     <div className='box'>
       <ButtonGroup>
-    <Button variant="outline-primary" disabled={click <=0} onClick={decrease }>-
+    <Button variant="outline-primary" disabled={click <=1} onClick={decrease }>-
     </Button>
 <p className='palabra'>Remera Roja</p>
     <Button variant="outline-primary" disabled={click >= stock}  onClick= {increase}>+
