@@ -10,3 +10,10 @@
     font-style: italic;
 
 }
+
+.sec {
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5rem;
+}

@@ -21,10 +21,10 @@ function NavBar() {
         <Nav.Link href="#home">Inicio</Nav.Link>
         <Nav.Link href="#link">Todos los Productos</Nav.Link>
         <NavDropdown title="Categorias" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Pantalones</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Bodys</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Remeras</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.4">Buzos</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.1" className='sec'>Pantalones</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2" className='sec'>Bodys</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3" className='sec'>Remeras</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.4" className='sec'>Buzos</NavDropdown.Item>
         </NavDropdown>
         < CartWidget msg={undefined} />
       </Nav>
