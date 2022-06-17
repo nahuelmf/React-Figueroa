@@ -4,11 +4,11 @@
     font-size: 3rem;
     font-weight: 500;
     font-style: italic;
-    color: thistle;
+    color: rgb(8, 8, 8);
 }
 
 .tipografia{
-    color: rgb(218, 185, 218);
+    color: rgb(7, 7, 7);
     font-family: sans-serif;
     font-style: italic;
     font-weight: 300;

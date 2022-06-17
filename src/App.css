@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Quicksand:wght@300&display=swap');
+
 .App {
   text-align: center;
   background-color: #b6897a !important;
@@ -15,19 +17,34 @@
 }
 
 .App-header {
-  background-color: #7f5a83;
-  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);  
+  background-color: #caa598;  
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.info{
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  color: rgb(0, 0, 0) ;
+  background-color: #ad8c80!important;
+
+}
+
+.precio{
+  color: rgb(119, 60, 11);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Oswald', sans-serif;
+font-family: 'Quicksand', sans-serif;
 }
 
 @keyframes App-logo-spin {

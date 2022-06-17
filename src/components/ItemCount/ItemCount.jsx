@@ -21,7 +21,7 @@ return (
       <ButtonGroup>
     <Button variant="outline-primary" disabled={click <=1} onClick={decrease }>-
     </Button>
-<p className='palabra'>Remera Roja</p>
+<p className='palabra'> Remera </p>
     <Button variant="outline-primary" disabled={click >= stock}  onClick= {increase}>+
     </Button>
     </ButtonGroup>
