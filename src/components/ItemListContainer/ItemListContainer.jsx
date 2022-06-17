@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-import ItemList from './ItemList/Item/ItemList'
+import ItemList from './ItemList/ItemList';
+
+
 import './ItemListContainer.css'
 
 
@@ -36,7 +38,7 @@ return(
     <div>
     <h1 className='titulo'> {props.title} </h1>
     <p className='tipografia'>{props.text} </p>
-      <ItemList data={data} />
+<ItemList data={data} />
     </div>
     <div>
       <ItemCount initial={1} stock={5} onAdd={onAdd} / >

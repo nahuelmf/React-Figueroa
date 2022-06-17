@@ -7,8 +7,11 @@
 }
 
 .box{
-    background-color: rgb(194, 118, 169);
+    background-color: rgb(202, 161, 115);
     padding: 35px 35px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .boton {
