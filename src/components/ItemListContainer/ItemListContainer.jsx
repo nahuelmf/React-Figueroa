@@ -1,16 +1,13 @@
+//@ts-check
 import React, {useState, useEffect} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import ItemList from './ItemList/ItemList';
-
-
 import './ItemListContainer.css'
 
 
 export default function ItemListContainer(props) {
 
   const productos = [
-
-
     { id: 1, title: "REMERA KID DINOS", description:"Remera de jersey de algodón , manga corta, con estampa en el delantero", price: 1990, pictureUrl:"https://mimoar.vtexassets.com/arquivos/ids/10585229-1200-auto?v=637880588851400000&width=1200&height=auto&aspect=true" },
     { id: 2, title: "REMERA KID ABRAZO", description:"Remera de jersey flamé, con estampa plana", price: 2390, pictureUrl:"https://mimoar.vtexassets.com/arquivos/ids/10816282-1200-auto?v=637900837661570000&width=1200&height=auto&aspect=true" },
     {id: 3, title:"REMERA KID MOMENTOS", description:"Remera de jersey, 50% algodón y 50% poliester con estampa plana frase en el delantero", price: 1490, pictureUrl:"https://mimoar.vtexassets.com/arquivos/ids/10931242-1200-auto?v=637909784271270000&width=1200&height=auto&aspect=true"},
@@ -29,6 +26,7 @@ export default function ItemListContainer(props) {
       });
       getData.then(res => setData(res))
     }, [])
+    
   const onAdd =(quantity) => {
 alert(`Añadiste ${quantity} Remeras`)
 console.log(`Añadiste ${quantity} Remeras`);
@@ -38,10 +36,10 @@ return(
     <div>
     <h1 className='titulo'> {props.title} </h1>
     <p className='tipografia'>{props.text} </p>
-<ItemList data={data} />
+    <ItemList data={data} />
     </div>
     <div>
-      <ItemCount initial={1} stock={5} onAdd={onAdd} / >
+      <ItemCount initial={1} stock={5} onAdd={onAdd} />
     </div>
     </>
   )
