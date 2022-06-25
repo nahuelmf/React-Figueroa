@@ -21,12 +21,13 @@ return (
       <ButtonGroup>
     <Button variant="outline-primary" disabled={click <=1} onClick={decrease }>-
     </Button>
+    <Badge bg="dark">{click}</Badge>
     <Button variant="outline-primary" disabled={click >= stock}  onClick= {increase}>+
     </Button>
     </ButtonGroup>
     <br />
     <Button className='boton' variant="primary" disabled={stock <=0} onClick={() => onAdd (click)}>
-  Añadir al carrito <Badge bg="dark">{click}</Badge>
+  Añadir al carrito 
 </Button>
     </div>
 
