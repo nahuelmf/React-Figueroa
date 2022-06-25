@@ -5,7 +5,7 @@ El proyecto que estoy realizando se trata de una tienda de ropa infantil.
 
 # Gif de Navegación
 
-![image] (https://github.com/nahuelmf/React-Figueroa/blob/main/src/media/Prueba.gif)
+![image](https://github.com/nahuelmf/React-Figueroa/blob/main/src/media/Prueba.gif)
 
 # Dependencias
 
