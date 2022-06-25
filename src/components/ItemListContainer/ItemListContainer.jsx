@@ -59,9 +59,6 @@ return(
     <p className='tipografia'>{props.text} </p>
     <ItemList data={data} />
     </div>
-    <div>
-      <ItemCount initial={1} stock={5} onAdd={onAdd} />
-      </div>
     </div>
     </>
   )
