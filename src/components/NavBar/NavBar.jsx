@@ -7,26 +7,28 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import CartWidget from './CartWidget/CartWidget';
-
+import { NavLink } from 'react-router-dom';
 
 
 function NavBar() {
     return (
 <Navbar bg="light" expand="lg">
   <Container>
-    <Navbar.Brand href="#home"><img src='./Assets/img/Pichuninuni.jpeg'/></Navbar.Brand>
+    <Navbar.Brand><NavLink to="/"><img src='./Assets/img/Pichuninuni.jpeg' alt='imagen'/></NavLink></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#home">Inicio</Nav.Link>
-        <Nav.Link href="#link">Todos los Productos</Nav.Link>
+        <Nav.Link><NavLink to="/">Inicio</NavLink></Nav.Link>
+        <Nav.Link><NavLink to="/">Todos los Productos</NavLink></Nav.Link>
         <NavDropdown title="Categorias" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1" className='sec'>Pantalones</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2" className='sec'>Bodys</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3" className='sec'>Remeras</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.4" className='sec'>Buzos</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.1" className='sec'><NavLink to='/category/Pantalones'>Pantalones</NavLink></NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2" className='sec'><NavLink to='/category/Bodys'>Bodys</NavLink></NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3" className='sec'><NavLink to='/category/Remeras'>Remeras</NavLink></NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.4" className='sec'><NavLink to='/category/Buzos'>Buzos</NavLink></NavDropdown.Item>
         </NavDropdown>
+        <NavLink to="cart">
         < CartWidget msg={undefined} />
+        </NavLink>
       </Nav>
     </Navbar.Collapse>
   </Container>
