@@ -1,5 +1,5 @@
 //@ts-check
-import React from 'react'
+import React from 'react'; 
 import Button from 'react-bootstrap/Button';
 
 export default function CartWidget({ msg }) {

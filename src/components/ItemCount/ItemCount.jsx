@@ -1,9 +1,9 @@
 //@ts-check
 import React, { useState} from 'react';
 import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import Badge from 'react-bootstrap/Badge'
-import './ItemCount.css'
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Badge from 'react-bootstrap/Badge';
+import './ItemCount.css';
 
 export default function ItemCount({ stock, initial,  onAdd }) {
 const [click, setCount] = useState(initial);
