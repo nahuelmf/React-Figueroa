@@ -2,9 +2,10 @@ import React from 'react';
 import { useContext } from 'react';
 import { useState } from 'react';
 
+
 export const CartContext = React.createContext([]);
 
-export const useCartCotext = () => useContext(CartContext);
+export const useCartContext = () => useContext(CartContext);
 
 
 export default function CartProvider({ children }) {
@@ -23,6 +24,12 @@ export default function CartProvider({ children }) {
 
     console.log('Carrito :', cart);
 
+    const totalPrice = () => {
+        return cart.reduce ((prev , act) => prev + act.quantity * act.price, 0); 
+    }
+    
+    const totalProducts = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0);
+
     const clearCart = () => setCar([]);
 
     const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
@@ -35,7 +42,10 @@ return (
 clearCart,
 isInCart,
 addItem,
-removeProduct
+totalPrice,
+totalProducts,
+removeProduct,
+cart 
 }}>
     {children}
 

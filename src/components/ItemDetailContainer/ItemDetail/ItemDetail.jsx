@@ -4,13 +4,13 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ItemCount from '../../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
-import { useCartCotext } from '../../CartContext/CartContext';
+import { useCartContext } from '../../CartContext/CartContext';
 
 
 
 export default function ItemDetail( {data}) {    
     const [goToCart, setGoToCart] = useState(false);
-    const {addItem} = useCartCotext();
+    const {addItem} = useCartContext();
 
 
     function onAdd(quantity) {

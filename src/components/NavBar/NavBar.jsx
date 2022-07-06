@@ -27,7 +27,7 @@ function NavBar() {
           <NavDropdown.Item className='sec'><NavLink to='/category/Buzos'>Buzos</NavLink></NavDropdown.Item>
         </NavDropdown>
         <NavLink to="cart">
-        < CartWidget msg={undefined} />
+        < CartWidget />
         </NavLink>
       </Nav>
     </Navbar.Collapse>

@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
-import ItemCount from '../../../ItemCount/ItemCount';
+
 
 
 
@@ -13,9 +13,7 @@ export default function Item({info})  {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    function onAdd(count) {
-        alert("Quiero agregar " + count + " de " + info.name);
-    }
+
 return (
 
 <Link to={`/detalle/${info.id}`}>
@@ -36,7 +34,6 @@ return (
     </Modal>
     <Card.Text className='precio'>${info.price}
     </Card.Text>
-<ItemCount stock={info.stock} onAdd={onAdd} initial={1}/>
 </Card.Body>
 </Card>
 </Link>
