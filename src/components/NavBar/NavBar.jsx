@@ -25,6 +25,7 @@ function NavBar() {
           <NavDropdown.Item className='sec'><NavLink to='/category/Bodys'>Bodys</NavLink></NavDropdown.Item>
           <NavDropdown.Item className='sec'><NavLink to='/category/Remeras'>Remeras</NavLink></NavDropdown.Item>
           <NavDropdown.Item className='sec'><NavLink to='/category/Buzos'>Buzos</NavLink></NavDropdown.Item>
+          <NavDropdown.Item className='sec'><NavLink to='/category/Camperas'>Camperas</NavLink></NavDropdown.Item>
         </NavDropdown>
         <NavLink to="cart">
         < CartWidget />
