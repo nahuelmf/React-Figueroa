@@ -5,9 +5,10 @@ import ItemCart from './ItemCart/ItemCart';
 import  './Cart.css';
 import Button from 'react-bootstrap/Button';
 
-export default function Cart() {
 
+export default function Cart() {
 const { cart, totalPrice} = useCartContext();
+
 
 if(cart.length === 0) {
   return(
@@ -22,10 +23,12 @@ if(cart.length === 0) {
 
   return (
   <>
+  <div>
   {
-    cart.map(product => <ItemCart key={product.id} product={product}/>)
+    cart.map(product => <ItemCart key={product.id} product={product}/> )
   }
   <h2 className='tipografia'> Total: ${totalPrice()}</h2>
+  </div>
   </>
   )
 }

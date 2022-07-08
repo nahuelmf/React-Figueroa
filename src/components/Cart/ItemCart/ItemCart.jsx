@@ -1,13 +1,21 @@
+
 import React from 'react';
 import { useCartContext } from '../../CartContext/CartContext';
 import  './ItemCart.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import ItemCount from '../../ItemCount/ItemCount';
 
 
 export default function ItemCart({ product }) {
 
 const { removeProduct } = useCartContext();
+const {addItem} = useCartContext();
+
+
+function onAdd(quantity) {
+    addItem(product, quantity);
+}
 
   return (
 <Card style={{ width: '18rem'}}>
@@ -25,6 +33,9 @@ const { removeProduct } = useCartContext();
     <Card.Text>
     <h2 className='tipografia'>Subtotal :${product.quantity * product.price}</h2>
     </Card.Text>
+    <div className="contador">
+    <ItemCount stock={product.stock} onAdd={onAdd} initial={1}/>
+    </div>
     <Button variant="primary" onClick={() => removeProduct(product.id)}>Eliminar</Button>
   </Card.Body>
 </Card>

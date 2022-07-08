@@ -7,14 +7,16 @@
 }
 
 .box{
-    background-color: #ad8c80;  
+    background-color: #ffffff;  
     border-radius: 5px;
 }
 
 .boton {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 200;
     font-family: sans-serif;
     font-style: italic;
     padding: 10px 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
