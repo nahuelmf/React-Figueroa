@@ -18,26 +18,22 @@ function onAdd(quantity) {
 }
 
   return (
-<Card style={{ width: '18rem'}}>
+<Card style={{ width: '18rem', textAlign:"center", backgroundColor: "#e2d7d3" }}>
+<div >
   <Card.Img variant="top" src={product.pictureUrl} alt={product.title} />
   <Card.Body>
     <Card.Title>
-      Producto : {product.title}
+    Producto : {product.title}
+    <p style={{marginTop:"1.5rem"}}>Cantidad : {product.quantity}</p>
+    <p style={{marginTop:"1.5rem"}}>Precio : ${product.price}</p>
+    <p style={{marginTop:"1.5rem"}}>Subtotal :${product.quantity * product.price}</p>
     </Card.Title>
-    <Card.Text>
-    <h2 className='tipografia'>Cantidad : {product.quantity}</h2>
-    </Card.Text>
-    <Card.Text>
-    <h2 className='tipografia'>Precio : ${product.price}</h2>
-    </Card.Text>
-    <Card.Text>
-    <h2 className='tipografia'>Subtotal :${product.quantity * product.price}</h2>
-    </Card.Text>
-    <div className="contador">
+    <div>
     <ItemCount stock={product.stock} onAdd={onAdd} initial={1}/>
     </div>
-    <Button variant="primary" onClick={() => removeProduct(product.id)}>Eliminar</Button>
+    <Button size='sm' variant="danger" onClick={() => removeProduct(product.id)}>X</Button>
   </Card.Body>
+  </div>
 </Card>
   )
 }

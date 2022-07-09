@@ -13,3 +13,14 @@
     font-weight: 300;
     font-size: 3rem;
 }
+
+.total{
+    color: rgb(0, 0, 0);
+    background-color: #747271;
+    border-radius: 12px;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: center;
+}

@@ -27,13 +27,13 @@ return (
         <Modal.Body>{data.description}</Modal.Body>
     <Card.Text className='precio'>${data.price}
     </Card.Text>
-    {
+                <p>Stock: {data.stock}</p>
+</Card.Body>
+{
         goToCart
         ? <Link to='/cart'> <Button variant="secondary"> Finalizar compra </Button></Link>
         : <ItemCount stock={data.stock} onAdd={onAdd} initial={1}/>
     }
-                <p>Stock: {data.stock}</p>
-</Card.Body>
 </Card>
 
 )

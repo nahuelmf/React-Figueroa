@@ -17,7 +17,7 @@ export default function Item({info})  {
 return (
 
 <Link to={`/detalle/${info.id}`}>
-<Card className='info'  style={{ width: '28rem', float:'left', margin:'1rem 5rem', height:'54rem'}}>
+<Card className='info'  style={{ width: '28rem', float:'left', margin:'1rem 5rem', height:'46rem'}}>
 <Card.Img variant="top" src={info.pictureUrl} />
 <Card.Body >
     <h1 >{info.title}
