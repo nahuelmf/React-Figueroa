@@ -6,6 +6,8 @@ import  './Cart.css';
 import Button from 'react-bootstrap/Button';
 
 
+
+
 export default function Cart() {
 const { cart, totalPrice} = useCartContext();
 
@@ -28,6 +30,8 @@ if(cart.length === 0) {
     cart.map(product => <ItemCart  key={product.id} product={product}/> )
   }
   <h2 className='total'> Total: ${totalPrice()}</h2>
+  <Link to='/checkout'>
+    <Button>Finalizar Compra</Button> </Link>
   </div>
   </>
   )
