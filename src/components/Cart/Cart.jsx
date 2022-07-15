@@ -5,9 +5,6 @@ import ItemCart from './ItemCart/ItemCart';
 import  './Cart.css';
 import Button from 'react-bootstrap/Button';
 
-
-
-
 export default function Cart() {
 const { cart, totalPrice} = useCartContext();
 

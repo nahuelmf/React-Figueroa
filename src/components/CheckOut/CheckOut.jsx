@@ -4,8 +4,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Alert from 'react-bootstrap/Alert';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export default function CheckOut() {
     const {cart, totalPrice} =useContext(CartContext);
@@ -51,11 +54,9 @@ export default function CheckOut() {
       const db = getFirestore();
       const orderCollection = collection(db, 'orders');
       addDoc(orderCollection, order)
-      .then(({id}) => console.log(id))
-      
+      .then(({id}) => Swal.fire('Su numero de orden es' , id) )
 
-      console.log(nombre, apellido, tel, direccion, email, provincia, ciudad, cp);
-      
+
       }
 
 
@@ -132,26 +133,24 @@ export default function CheckOut() {
     </Row>
     <Form.Group className="mb-3">
       <Form.Check
-      onClick={handleClick}
         required
         label="Acepto terminos y condiciones"
         feedback="Debe estar de acuerdo antes de enviar."
         feedbackType="invalid"
       />
     </Form.Group>
-    <Button variant='primary' type="submit">Terminar Compra</Button>
+    <Link to='/'> <Button variant='primary' onClick={handleClick} type="submit" >Terminar Compra</Button>
+    </Link>
+
   </Form>
-  
+
   )
 }
 
-
-/*
-npm install -g firebase-tools
-antes de cada deploy crear el build local: "npm run build".
-firebase login (si no estoy logueado en la cli)
-firebase init (solo la primera vez luego no hacerlo!)
-ready to proceed: yes, seleccionar: configure files for firebase for firebase…, use an existing project, seleccionar el proyecto existente de la lista, seleccionar carpeta build (no public), configurar como spa yes, setup automatic deploy with GitHub : no!,  reescribir index no!.
-firebase deploy (siempre primero crear el build y luego “firebase deploy”).
-
+/**deploy
+*que se vea bien en celulares
+*que use localstorage
+*validar el formulario de compra
+*borrar todo el debug con console.log
+*stock
 */

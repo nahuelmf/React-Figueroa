@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import CartWidget from './CartWidget/CartWidget';
-import { NavLink , Link} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from "../../Assets/img/Pichuninuni.jpeg";
 
 
