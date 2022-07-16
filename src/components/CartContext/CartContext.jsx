@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useContext } from 'react';
 import { useState } from 'react';
 
@@ -8,9 +9,23 @@ export const CartContext = React.createContext([]);
 export const useCartContext = () => useContext(CartContext);
 
 
-export default function CartProvider({ children }) {
+//const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart' || '[]'))
 
+export default function CartProvider({ children }) {
+    
     const [cart , setCar] =useState([]);
+
+
+    useEffect(() =>{
+const data = localStorage.getItem("cart");
+if(data) {
+    setCar(JSON.parse(data))
+}
+    }, [])
+
+useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart)); 
+}); 
 
     const addItem = (item, quantity) => {
         if (isInCart(item.id)) {
@@ -22,12 +37,12 @@ export default function CartProvider({ children }) {
         }
     }
 
-
     const totalPrice = () => {
         return cart.reduce ((prev , act) => prev + act.quantity * act.price, 0); 
     }
     
     const totalProducts = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0);
+    
 
     const clearCart = () => setCar([]);
 

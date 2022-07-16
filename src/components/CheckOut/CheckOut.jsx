@@ -4,11 +4,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Alert from 'react-bootstrap/Alert';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+
 
 export default function CheckOut() {
     const {cart, totalPrice} =useContext(CartContext);
@@ -141,16 +141,7 @@ export default function CheckOut() {
     </Form.Group>
     <Link to='/'> <Button variant='primary' onClick={handleClick} type="submit" >Terminar Compra</Button>
     </Link>
-
   </Form>
 
   )
 }
-
-/**deploy
-*que se vea bien en celulares
-*que use localstorage
-*validar el formulario de compra
-*borrar todo el debug con console.log
-*stock
-*/

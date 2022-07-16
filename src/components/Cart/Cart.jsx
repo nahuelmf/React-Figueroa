@@ -24,7 +24,7 @@ if(cart.length === 0) {
   <>
   <div>
   {
-    cart.map(product => <ItemCart  key={product.id} product={product}/> )
+    cart.map(product => <ItemCart key={product.id} product={product}/> )
   }
   <h2 className='total'> Total: ${totalPrice()}</h2>
   <Link to='/checkout'>
