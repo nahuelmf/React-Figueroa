@@ -8,13 +8,9 @@ export const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
 
-
-//const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart' || '[]'))
-
 export default function CartProvider({ children }) {
     
     const [cart , setCar] =useState([]);
-
 
     useEffect(() =>{
 const data = localStorage.getItem("cart");
@@ -49,7 +45,6 @@ useEffect(() => {
     const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
 
     const removeProduct = (id) => setCar(cart.filter(product => product.id !== id));
-
 
 return (
 <CartContext.Provider value={{

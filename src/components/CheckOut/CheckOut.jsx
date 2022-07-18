@@ -9,8 +9,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-
 export default function CheckOut() {
+
+
     const {cart, totalPrice} =useContext(CartContext);
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
@@ -20,7 +21,7 @@ export default function CheckOut() {
     const [provincia, setProvincia] = useState('');
     const [ciudad, setCiudad] = useState('');
     const [cp, setCp] = useState('');
-
+    const [date, setDate] = useState('');
     
     const [validated, setValidated] = useState(false);
 
@@ -45,6 +46,7 @@ export default function CheckOut() {
           provincia: provincia,
           ciudad: ciudad,
           cp: cp,
+          date: date
         },
         items: cart.map(product => ({ id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
         total: totalPrice(),
@@ -61,7 +63,7 @@ export default function CheckOut() {
 
 
   return (
-    
+
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
     <Row className="mb-3">
       <Form.Group as={Col} md="4" controlId="validationCustom01">
@@ -123,11 +125,18 @@ export default function CheckOut() {
           Por favor ingrese una provincia valida.
         </Form.Control.Feedback>
       </Form.Group>
-      <Form.Group as={Col} md="2" controlId="validationCustom05">
+      <Form.Group as={Col} md="3" controlId="validationCustom05">
         <Form.Label>Codigo Postal</Form.Label>
         <Form.Control onChange={(e) => setCp(e.target.value)} type="text" placeholder="Codigo Postal" required />
         <Form.Control.Feedback type="invalid">
           Por favor ingrese un codigo postal valido.
+        </Form.Control.Feedback>
+      </Form.Group>
+      <Form.Group as={Col} md="3" controlId="validationCustom05">
+        <Form.Label>Dia de la compra</Form.Label>
+        <Form.Control onChange={(e) => setDate(e.target.value)} type="date" id="start" name="trip-start" required />
+        <Form.Control.Feedback type="invalid">
+          Por favor ingrese un dia valido.
         </Form.Control.Feedback>
       </Form.Group>
     </Row>
@@ -142,6 +151,5 @@ export default function CheckOut() {
     <Link to='/'> <Button variant='primary' onClick={handleClick} type="submit" >Terminar Compra</Button>
     </Link>
   </Form>
-
   )
 }
