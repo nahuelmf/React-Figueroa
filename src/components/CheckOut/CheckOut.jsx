@@ -21,7 +21,7 @@ export default function CheckOut() {
     const [provincia, setProvincia] = useState('');
     const [ciudad, setCiudad] = useState('');
     const [cp, setCp] = useState('');
-    const [date, setDate] = useState('');
+
     
     const [validated, setValidated] = useState(false);
 
@@ -35,6 +35,9 @@ export default function CheckOut() {
       setValidated(true);
     };
 
+    const date = new Date();
+    const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+
 
     const order ={
         buyer:{
@@ -46,8 +49,9 @@ export default function CheckOut() {
           provincia: provincia,
           ciudad: ciudad,
           cp: cp,
-          date: date
         },
+        date: date.toLocaleDateString(), 
+        hora: [hour, minutes, seconds],
         items: cart.map(product => ({ id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
         total: totalPrice(),
       }
@@ -130,13 +134,6 @@ export default function CheckOut() {
         <Form.Control onChange={(e) => setCp(e.target.value)} type="text" placeholder="Codigo Postal" required />
         <Form.Control.Feedback type="invalid">
           Por favor ingrese un codigo postal valido.
-        </Form.Control.Feedback>
-      </Form.Group>
-      <Form.Group as={Col} md="3" controlId="validationCustom05">
-        <Form.Label>Dia de la compra</Form.Label>
-        <Form.Control onChange={(e) => setDate(e.target.value)} type="date" id="start" name="trip-start" required />
-        <Form.Control.Feedback type="invalid">
-          Por favor ingrese un dia valido.
         </Form.Control.Feedback>
       </Form.Group>
     </Row>
