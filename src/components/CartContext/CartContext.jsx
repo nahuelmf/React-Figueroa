@@ -21,7 +21,8 @@ if(data) {
 
 useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart)); 
-}); 
+});
+
 
     const addItem = (item, quantity) => {
         if (isInCart(item.id)) {
