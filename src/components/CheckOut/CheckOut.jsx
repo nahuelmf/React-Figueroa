@@ -94,7 +94,7 @@ export default function CheckOut() {
           required
           type="text"
           placeholder="Nombre"
-          defaultValue=""
+          minlength="4"
         />
       </Form.Group>
       <Form.Group as={Col} md="4" controlId="validationCustom02">
@@ -104,14 +104,14 @@ export default function CheckOut() {
           required
           type="text"
           placeholder="Apellido"
-          defaultValue=""
+          minlength="4"
         />
       </Form.Group>
     </Row>
     <Row className="mb-3">
     <Form.Group as={Col} md="4" controlId="validationCustom03">
         <Form.Label>Telefono</Form.Label>
-        <Form.Control onChange={(e) => setTel(e.target.value)} type="tel" placeholder="Telefono" required />
+        <Form.Control onChange={(e) => setTel(e.target.value)} type="tel" placeholder="Telefono" required min="1" max="12" />
         <Form.Control.Feedback type="invalid">
           Por favor ingrese un telefono valido.
         </Form.Control.Feedback>
@@ -125,6 +125,7 @@ export default function CheckOut() {
               placeholder="Email"
               aria-describedby="inputGroupPrepend"
               validate={validateEmail}
+              minlength="8"
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -134,21 +135,21 @@ export default function CheckOut() {
         </Form.Group>  
       <Form.Group as={Col} md="4" controlId="validationCustom03">
         <Form.Label>Direccion</Form.Label>
-        <Form.Control onChange={(e) => setDireccion(e.target.value)} type="text" placeholder="Direccion" required />
+        <Form.Control onChange={(e) => setDireccion(e.target.value)} type="text" placeholder="Direccion" required  minlength="6"/>
         <Form.Control.Feedback type="invalid">
           Por favor ingrese una direccion valida.
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group as={Col} md="3" controlId="validationCustom03">
         <Form.Label>Ciudad</Form.Label>
-        <Form.Control onChange={(e) => setCiudad(e.target.value)} type="text" placeholder="Ciudad" required />
+        <Form.Control onChange={(e) => setCiudad(e.target.value)} type="text" placeholder="Ciudad" required minlength="6"/>
         <Form.Control.Feedback type="invalid">
           Por favor ingrese una ciudad valida.
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group as={Col} md="3" controlId="validationCustom04">
         <Form.Label>Provincia</Form.Label>
-        <Form.Control onChange={(e) => setProvincia(e.target.value)} type="text" placeholder="Provincia" required />
+        <Form.Control onChange={(e) => setProvincia(e.target.value)} type="text" placeholder="Provincia" required minlength="6"/>
         <Form.Control.Feedback type="invalid">
           Por favor ingrese una provincia valida.
         </Form.Control.Feedback>
